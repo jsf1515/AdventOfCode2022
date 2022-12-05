@@ -15,7 +15,7 @@ component {
 
         var topElf = elves.max();
 
-        print.line("top else has #topElf# calories");
+        print.line("top elf has #topElf# calories");
     }
 
     part2 = () => {
