@@ -2,7 +2,6 @@ component {
 
     part1 = () => {
         var topElf = parseInputs().max();
-
         print.line("top elf has #topElf# calories");
     }
 
