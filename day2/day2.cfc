@@ -42,30 +42,36 @@ component {
 
         var outcomes = {
             "X" : {
-                "baseScore" : 0,
-                "A" : 3,
-                "B" : 1,
-                "C" : 2
+                "base" : 0,
+                "bonus" : {
+                    "A" : 3,
+                    "B" : 1,
+                    "C" : 2
+                }
             },
             "Y" : {
-                "baseScore" : 3,
-                "A" : 1,
-                "B" : 2,
-                "C" : 3
+                "base" : 3,
+                "bonus" : {
+                    "A" : 1,
+                    "B" : 2,
+                    "C" : 3
+                }
             },
             "Z" : { 
-                "baseScore" : 6 ,
-                "A" : 2,
-                "B" : 3,
-                "C" : 1
+                "base" : 6 ,
+                "bonus" : {
+                    "A" : 2,
+                    "B" : 3,
+                    "C" : 1
+                }
             }
         };
 
         var inputs = fileRead("./inputs.txt")
             .listToArray(chr(10))
             .map((input) => {
-                var baseScore = outcomes[input[3]].baseScore;
-                var bonusScore = outcomes[input[3]][input[1]];
+                var baseScore = outcomes[input[3]].base;
+                var bonusScore = outcomes[input[3]]["bonus"][input[1]];
                 return baseScore + bonusScore;
             })
             .reduce((previous,current) => {
