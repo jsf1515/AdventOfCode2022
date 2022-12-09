@@ -17,6 +17,7 @@ component {
                     return 0;
                 }
             })
+            .sum()
 
         print.line(inputs)
     }
